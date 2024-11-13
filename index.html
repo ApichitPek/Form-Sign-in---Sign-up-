@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" href="sign_in_Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="usignin">USER SIGNIN</div>
+    <div class="ID-container">
+        <div class="user">
+            <i class="fa-solid fa-user" id="logo-signin"></i>
+            <input type="text" placeholder="User or email" class="input" required>
+        </div>
+            <a href="#" class="linkuser">forgot user?</a>
+        <div class="password">
+            <i class="fa-solid fa-lock" id="logo-signin"></i>
+            <input type="password" placeholder="Enter you password" class="input" id="password-input"  minlength="6">
+            <i class="fa-solid fa-eye" id="logo-eye"></i>
+        </div>
+        <div class="blink">
+            <div class="remember">
+            <input type="checkbox" id="member" value="Remember">&nbsp;Remember Me
+            </div>
+            <a href="#" class="link">forgot password?</a>
+        </div>
+        <div class="button-container">
+            <a href="./sign_up.html"><button class="create">Create account</button></a>
+            <a href=""><button class="signin">Sign in</button></a>
+        </div>
+    </div>
+
+        <script>
+        const eyeIcon = document.getElementById('logo-eye');
+        const passwordInput = document.getElementById('password-input');
+
+        // Show password on mouse down
+        eyeIcon.addEventListener('mousedown', () => {
+            passwordInput.type = 'text'; // Show password
+        });
+
+        // Hide password on mouse up
+        eyeIcon.addEventListener('mouseup', () => {
+            passwordInput.type = 'password'; // Hide password
+        });
+
+        // For touch devices (mobile)
+        eyeIcon.addEventListener('touchstart', () => {
+            passwordInput.type = 'text'; // Show password
+        });
+
+        eyeIcon.addEventListener('touchend', () => {
+            passwordInput.type = 'password'; // Hide password
+        });
+    </script>
+
+</body>
+</html>
